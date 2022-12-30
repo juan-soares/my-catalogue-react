@@ -7,7 +7,7 @@ export default function Header() {
 
   useEffect(() => {
     async function getApi() {
-      const res = await fetch('https://meucatalogo00.b4a.app/categorias');
+      const res = await fetch(`${process.env.REACT_APP_API}/categorias`);
       const resJson = await res.json();
       setCategorias(
         resJson.sort((a, b) => {
